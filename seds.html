@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEDS at UCSD | Andrew Thompson</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#21295c',
+            navyLight: '#2b3570',
+            cream: '#f0ebd8',
+          },
+          fontFamily: {
+            heading: ['Oswald', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-navy text-cream font-sans antialiased selection:bg-cream selection:text-navy">
+
+  <!-- Sticky Navigation Bar (Matches Home Page) -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-cream/10 transition-all">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-heading text-2xl tracking-wide text-cream hover:opacity-80 transition">
+        ANDREW THOMPSON
+      </a>
+      
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider uppercase">
+        <a href="index.html#about" class="hover:text-amber-300 transition">About</a>
+        <a href="index.html#education" class="hover:text-amber-300 transition">Education</a>
+        <a href="index.html#experience" class="hover:text-amber-300 transition">Experience</a>
+        <a href="varda.html" class="hover:text-amber-300 transition">Varda</a>
+        <a href="seds.html" class="text-amber-300 font-bold">SEDS</a>
+        <a href="index.html#contact" class="px-4 py-2 rounded-full bg-cream text-navy font-semibold hover:bg-amber-200 transition">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-cream focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy border-b border-cream/10 px-6 pb-6 pt-2 space-y-3 text-center uppercase tracking-wider text-sm">
+      <a href="index.html#about" class="block py-2 hover:text-amber-300">About</a>
+      <a href="index.html#education" class="block py-2 hover:text-amber-300">Education</a>
+      <a href="index.html#experience" class="block py-2 hover:text-amber-300">Experience</a>
+      <a href="varda.html" class="block py-2 hover:text-amber-300">Varda</a>
+      <a href="seds.html" class="block py-2 text-amber-300 font-bold">SEDS</a>
+      <a href="index.html#contact" class="block py-2 bg-cream text-navy rounded-full font-bold">Contact Me</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner (Winter Snow Theme) -->
+  <header class="relative h-[45vh] md:h-[55vh] flex items-start justify-end p-8 md:p-16 bg-cover bg-center mt-16" style="background-image: url('winter.jpg');">
+    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-navy/90"></div>
+    <div class="relative z-10 max-w-4xl text-right">
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-navy drop-shadow-sm leading-tight tracking-wide">
+        Students for the Exploration<br />and Development of Space
+      </h1>
+    </div>
+  </header>
+
+  <!-- Section 1: SEDS at UCSD Intro -->
+  <section class="py-16 px-6 md:px-12 bg-navy text-cream">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-heading text-4xl md:text-5xl mb-10 tracking-wide">SEDS at UCSD</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <!-- Left Photo: Riptide at FAR -->
+        <div class="md:col-span-5 flex flex-col items-center">
+          <div class="overflow-hidden rounded-sm shadow-2xl border border-cream/20 w-full">
+            <img src="Riptide.jpg" alt="Riptide at Friends of Amateur Rocketry" class="w-full h-auto object-cover" />
+          </div>
+          <p class="text-xs italic text-cream/80 mt-3 text-center">
+            Riptide at FAR (Friends of Amateur Rocketry)<br />Testing Site in Mojave Desert
+          </p>
+        </div>
+
+        <!-- Right Text -->
+        <div class="md:col-span-7 space-y-5 text-lg leading-relaxed font-light">
+          <p>
+            Students for the Exploration and Development of Space (SEDS) at UCSD is a student-run collegiate rocketry organization.
+          </p>
+          <p>
+            I serve as the Lead for the fluids subteam of our bipropellant liquid rocket <strong class="font-bold text-white">Riptide</strong>.
+          </p>
+          <p>
+            I am also the <strong class="font-bold text-white">Director of Internal Affairs</strong> and a member of the executive board!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Fluids Lead - Riptide -->
+  <section class="py-16 px-6 md:px-12 bg-cream text-navy">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-heading text-4xl md:text-5xl mb-10 text-left md:text-right tracking-wide">
+        Fluids Lead - Riptide
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <!-- Left Text -->
+        <div class="md:col-span-7 space-y-5 text-base md:text-lg leading-relaxed">
+          <p>
+            As Fluids Lead on Riptide (our archived predecessor to Tidepool) I led a team of 7 engineers through the manufacturing, test campaign, and following troubleshooting of our propellant feed system.
+          </p>
+          <p>
+            I authored and maintained the system P&amp;ID (pictured below!), developed a custom MATLAB script to model major and minor system head losses and verify propellant mass flow requirements.
+          </p>
+          <p>
+            I wrote procedures and led hands-on leak check efforts that laid the foundational architecture for our subsequent self-landing vehicle development.
+          </p>
+        </div>
+
+        <!-- Right CAD Image -->
+        <div class="md:col-span-5 flex justify-center">
+          <div class="bg-white p-4 rounded-sm shadow-xl border border-navy/10 w-full max-w-xs hover:scale-105 transition-transform duration-300">
+            <img src="Riptide_CAD.png" alt="Riptide Rocket CAD Model" class="w-full h-auto object-contain" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Technical Diagrams (Interactive Lightbox) -->
+  <section class="py-16 px-6 md:px-12 bg-navy text-cream">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-center text-xs uppercase tracking-widest text-cream/60 mb-6">
+        🔍 Click either schematic below to enlarge
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <!-- P&ID Diagram -->
+        <div class="flex flex-col items-center group cursor-pointer" onclick="openLightbox('riptide_pnid.png', 'Riptide P&ID March 2026')">
+          <div class="bg-white p-3 rounded-sm shadow-2xl w-full overflow-hidden group-hover:ring-4 ring-amber-300 transition">
+            <img src="riptide_pnid.png" alt="Riptide P&ID March 2026" class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-300" />
+          </div>
+          <p class="text-sm italic mt-3 text-cream/90 group-hover:text-amber-300 transition">
+            Riptide P&amp;ID March 2026
+          </p>
+        </div>
+
+        <!-- Fitting Diagram -->
+        <div class="flex flex-col items-center group cursor-pointer" onclick="openLightbox('fitting_diagram.png', 'Riptide Fitting Diagram March 2026')">
+          <div class="bg-white p-3 rounded-sm shadow-2xl w-full overflow-hidden group-hover:ring-4 ring-amber-300 transition">
+            <img src="fitting_diagram.png" alt="Riptide Fitting Diagram March 2026" class="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-300" />
+          </div>
+          <p class="text-sm italic mt-3 text-cream/90 group-hover:text-amber-300 transition">
+            Riptide Fitting Diagram March 2026
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Director of Internal Affairs -->
+  <section class="py-16 px-6 md:px-12 bg-cream text-navy">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="font-heading text-4xl md:text-5xl mb-10 tracking-wide">
+        Director of Internal Affairs
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <!-- Left Photo: Me and Riptide -->
+        <div class="md:col-span-4 flex flex-col items-center">
+          <div class="overflow-hidden rounded-sm shadow-xl border border-navy/15 w-full max-w-xs">
+            <img src="me_and_riptide.jpg" alt="Andrew and Riptide Rocket" class="w-full h-auto object-cover" />
+          </div>
+          <p class="text-xs italic mt-2.5 text-navy/80">Me and Riptide</p>
+        </div>
+
+        <!-- Right Text -->
+        <div class="md:col-span-8 space-y-5 text-base md:text-lg leading-relaxed">
+          <p>
+            Stepping onto the executive board as Director of Internal Affairs, I directed organization-wide recruitment for SEDS@UCSD, evaluating over 300 applicant profiles (+20% from previous years).
+          </p>
+          <p>
+            Then I led the selection, onboarding, and mentorship of 30 incoming members across our propulsion, structures, avionics, and controls subteams.
+          </p>
+          <p>
+            Beyond managing high-volume applicant reviews and organizing recruitment mixers, I served as a key mediator and problem dissipator within the club, navigating interpersonal dynamics, aligning cross-subteam priorities, and resolving technical or operational friction between members to keep complex projects moving forward smoothly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation -->
+      <div class="mt-16 pt-8 border-t border-navy/15 flex flex-wrap items-center justify-between gap-4">
+        <a href="varda.html" class="px-6 py-3 rounded-full border border-navy/40 hover:bg-navy hover:text-cream transition font-medium text-sm uppercase tracking-wider">
+          ← Previous: Varda Space
+        </a>
+        <a href="index.html#contact" class="px-6 py-3 rounded-full bg-navy text-cream hover:bg-navyLight transition font-semibold text-sm uppercase tracking-wider">
+          Get In Touch →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen Image Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center p-4" onclick="closeLightbox()">
+    <button class="absolute top-6 right-8 text-white text-4xl font-bold hover:text-amber-300" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="Enlarged Schematic" class="max-h-[85vh] max-w-[95vw] object-contain bg-white p-2 rounded shadow-2xl" />
+    <p id="lightbox-caption" class="text-cream mt-4 text-sm italic"></p>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').textContent = caption;
+      lb.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
