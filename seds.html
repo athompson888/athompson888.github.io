@@ -30,11 +30,24 @@
       }
     }
   </script>
+
+  <style>
+    .penguin-btn {
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .penguin-btn:hover {
+      transform: scale(1.15) rotate(5deg);
+    }
+    .penguin-btn:active {
+      transform: scale(0.92);
+    }
+  </style>
 </head>
 <body class="bg-navy text-cream font-sans antialiased selection:bg-cream selection:text-navy">
 
-  <!-- Sticky Navigation Bar (Matches Home Page) -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-cream/10 transition-all">
+  <!-- Sticky Navigation Bar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy border-b border-cream/15 transition-all">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="font-heading text-2xl tracking-wide text-cream hover:opacity-80 transition">
         ANDREW THOMPSON
@@ -71,9 +84,8 @@
     </div>
   </nav>
 
-  <!-- Hero Banner (Winter Snow Theme) -->
+  <!-- Hero Banner (Sharp Cut) -->
   <header class="relative h-[45vh] md:h-[55vh] flex items-start justify-end p-8 md:p-16 bg-cover bg-center mt-16" style="background-image: url('winter.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-navy/90"></div>
     <div class="relative z-10 max-w-4xl text-right">
       <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-navy drop-shadow-sm leading-tight tracking-wide">
         Students for the Exploration<br />and Development of Space
@@ -87,8 +99,21 @@
       <h2 class="font-heading text-4xl md:text-5xl mb-10 tracking-wide">SEDS at UCSD</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        <!-- Left Photo: Riptide at FAR -->
-        <div class="md:col-span-5 flex flex-col items-center">
+        <!-- Text First on Mobile (order-1), Right on Desktop (md:order-2) -->
+        <div class="order-1 md:order-2 md:col-span-7 space-y-5 text-lg leading-relaxed font-light">
+          <p>
+            Students for the Exploration and Development of Space (SEDS) at UCSD is a student-run collegiate rocketry organization.
+          </p>
+          <p>
+            I serve as the Lead for the fluids subteam of our bipropellant liquid rocket Riptide.
+          </p>
+          <p>
+            I am also the Director of Internal Affairs and a member of the executive board!
+          </p>
+        </div>
+
+        <!-- Photo Second on Mobile (order-2), Left on Desktop (md:order-1) -->
+        <div class="order-2 md:order-1 md:col-span-5 flex flex-col items-center">
           <div class="overflow-hidden rounded-sm shadow-2xl border border-cream/20 w-full">
             <img src="Riptide.jpg" alt="Riptide at Friends of Amateur Rocketry" class="w-full h-auto object-cover" />
           </div>
@@ -96,35 +121,31 @@
             Riptide at FAR (Friends of Amateur Rocketry)<br />Testing Site in Mojave Desert
           </p>
         </div>
-
-        <!-- Right Text -->
-        <div class="md:col-span-7 space-y-5 text-lg leading-relaxed font-light">
-          <p>
-            Students for the Exploration and Development of Space (SEDS) at UCSD is a student-run collegiate rocketry organization.
-          </p>
-          <p>
-            I serve as the Lead for the fluids subteam of our bipropellant liquid rocket <strong class="font-bold text-white">Riptide</strong>.
-          </p>
-          <p>
-            I am also the <strong class="font-bold text-white">Director of Internal Affairs</strong> and a member of the executive board!
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: Fluids Lead - Riptide -->
-  <section class="py-16 px-6 md:px-12 bg-cream text-navy">
+  <!-- Section 2: Fluids Lead - Riptide (With Penguin #3 at Top Left) -->
+  <section class="relative py-16 px-6 md:px-12 bg-cream text-navy">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-heading text-4xl md:text-5xl mb-10 text-left md:text-right tracking-wide">
-        Fluids Lead - Riptide
-      </h2>
+      
+      <!-- Top Row with Penguin #3 on Left and Heading on Right -->
+      <div class="flex items-center justify-between mb-10">
+        <img src="plumbing_penguin.png" 
+             alt="Plumbing Penguin 3" 
+             onclick="findPenguin(3)"
+             class="penguin-btn w-14 md:w-16 h-auto select-none" />
+
+        <h2 class="font-heading text-4xl md:text-5xl text-right tracking-wide">
+          Fluids Lead - Riptide
+        </h2>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        <!-- Left Text -->
-        <div class="md:col-span-7 space-y-5 text-base md:text-lg leading-relaxed">
+        <!-- Text First on Mobile & Left on Desktop -->
+        <div class="order-1 md:col-span-7 space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            As Fluids Lead on Riptide (our archived predecessor to Tidepool) I led a team of 7 engineers through the manufacturing, test campaign, and following troubleshooting of our propellant feed system.
+            As Fluids Lead on Riptide I led a team of 7 engineers through the manufacturing, test campaign, and following troubleshooting of our propellant feed system.
           </p>
           <p>
             I authored and maintained the system P&amp;ID (pictured below!), developed a custom MATLAB script to model major and minor system head losses and verify propellant mass flow requirements.
@@ -134,11 +155,14 @@
           </p>
         </div>
 
-        <!-- Right CAD Image -->
-        <div class="md:col-span-5 flex justify-center">
-          <div class="bg-white p-4 rounded-sm shadow-xl border border-navy/10 w-full max-w-xs hover:scale-105 transition-transform duration-300">
+        <!-- CAD Image Second on Mobile & Right on Desktop -->
+        <div class="order-2 md:col-span-5 flex flex-col items-center">
+          <div class="bg-white p-4 rounded-sm shadow-xl border-2 border-navy w-full max-w-xs">
             <img src="Riptide_CAD.png" alt="Riptide Rocket CAD Model" class="w-full h-auto object-contain" />
           </div>
+          <p class="text-xs italic mt-2.5 text-navy/80 font-medium">
+            Riptide CAD
+          </p>
         </div>
       </div>
     </div>
@@ -147,10 +171,6 @@
   <!-- Section 3: Technical Diagrams (Interactive Lightbox) -->
   <section class="py-16 px-6 md:px-12 bg-navy text-cream">
     <div class="max-w-5xl mx-auto">
-      <p class="text-center text-xs uppercase tracking-widest text-cream/60 mb-6">
-        🔍 Click either schematic below to enlarge
-      </p>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         <!-- P&ID Diagram -->
         <div class="flex flex-col items-center group cursor-pointer" onclick="openLightbox('riptide_pnid.png', 'Riptide P&ID March 2026')">
@@ -183,18 +203,10 @@
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        <!-- Left Photo: Me and Riptide -->
-        <div class="md:col-span-4 flex flex-col items-center">
-          <div class="overflow-hidden rounded-sm shadow-xl border border-navy/15 w-full max-w-xs">
-            <img src="me_and_riptide.jpg" alt="Andrew and Riptide Rocket" class="w-full h-auto object-cover" />
-          </div>
-          <p class="text-xs italic mt-2.5 text-navy/80">Me and Riptide</p>
-        </div>
-
-        <!-- Right Text -->
-        <div class="md:col-span-8 space-y-5 text-base md:text-lg leading-relaxed">
+        <!-- Text First on Mobile (order-1), Right on Desktop (md:order-2) -->
+        <div class="order-1 md:order-2 md:col-span-8 space-y-5 text-base md:text-lg leading-relaxed">
           <p>
-            Stepping onto the executive board as Director of Internal Affairs, I directed organization-wide recruitment for SEDS@UCSD, evaluating over 300 applicant profiles (+20% from previous years).
+            As a member of the executive board, I directed organization-wide recruitment for SEDS@UCSD, evaluating over 300 applicants (+20% from previous years).
           </p>
           <p>
             Then I led the selection, onboarding, and mentorship of 30 incoming members across our propulsion, structures, avionics, and controls subteams.
@@ -202,6 +214,14 @@
           <p>
             Beyond managing high-volume applicant reviews and organizing recruitment mixers, I served as a key mediator and problem dissipator within the club, navigating interpersonal dynamics, aligning cross-subteam priorities, and resolving technical or operational friction between members to keep complex projects moving forward smoothly.
           </p>
+        </div>
+
+        <!-- Photo Second on Mobile (order-2), Left on Desktop (md:order-1) -->
+        <div class="order-2 md:order-1 md:col-span-4 flex flex-col items-center">
+          <div class="overflow-hidden rounded-sm shadow-xl border-2 border-navy/20 w-full max-w-xs">
+            <img src="me_and_riptide.jpg" alt="Andrew and Riptide Rocket" class="w-full h-auto object-cover" />
+          </div>
+          <p class="text-xs italic mt-2.5 text-navy/80">Me and Riptide!</p>
         </div>
       </div>
 
@@ -222,6 +242,11 @@
     <button class="absolute top-6 right-8 text-white text-4xl font-bold hover:text-amber-300" aria-label="Close">&times;</button>
     <img id="lightbox-img" src="" alt="Enlarged Schematic" class="max-h-[85vh] max-w-[95vw] object-contain bg-white p-2 rounded shadow-2xl" />
     <p id="lightbox-caption" class="text-cream mt-4 text-sm italic"></p>
+  </div>
+
+  <!-- Clean Text-Only Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-navy border-2 border-cream text-cream px-5 py-3.5 rounded-xl shadow-2xl transform translate-y-28 opacity-0 transition-all duration-300 z-50">
+    <span id="toast-msg" class="text-sm font-medium">Notification</span>
   </div>
 
   <script>
@@ -245,6 +270,35 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
     });
+
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = message;
+      toast.classList.remove('translate-y-28', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-28', 'opacity-0');
+      }, 3200);
+    }
+
+    // 3-Penguin Easter Egg Tracker
+    function findPenguin(id) {
+      let found = JSON.parse(localStorage.getItem('plumbing_penguins') || '[]');
+      if (!found.includes(id)) {
+        found.push(id);
+        localStorage.setItem('plumbing_penguins', JSON.stringify(found));
+      }
+      const count = found.length;
+      if (count >= 3) {
+        showToast('3/3 plumbing penguins found');
+        setTimeout(() => {
+          window.location.href = 'secret.html';
+        }, 900);
+      } else {
+        showToast(`${count}/3 plumbing penguins found`);
+      }
+    }
   </script>
 
 </body>

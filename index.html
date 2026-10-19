@@ -33,19 +33,22 @@
   </script>
 
   <style>
-    .hover-lift {
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    .penguin-btn {
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .hover-lift:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.35);
+    .penguin-btn:hover {
+      transform: scale(1.15) rotate(-5deg);
+    }
+    .penguin-btn:active {
+      transform: scale(0.92);
     }
   </style>
 </head>
 <body class="bg-navy text-cream font-sans antialiased selection:bg-cream selection:text-navy">
 
   <!-- Sticky Navigation Bar -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy/90 backdrop-blur-md border-b border-cream/10 transition-all">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-navy border-b border-cream/15 transition-all">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="index.html" class="font-heading text-2xl tracking-wide text-cream hover:opacity-80 transition">
         ANDREW THOMPSON
@@ -82,20 +85,18 @@
     </div>
   </nav>
 
-  <!-- Hero Section (Summer / Ocean Theme) -->
-  <header class="relative min-h-[75vh] md:min-h-[85vh] flex flex-col justify-between p-8 md:p-16 pt-28 bg-cover bg-center" style="background-image: url('summer.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-navy/80"></div>
-
+  <!-- Hero Section (Sharp Cut) -->
+  <header class="relative min-h-[70vh] md:min-h-[80vh] flex flex-col justify-between p-8 md:p-16 pt-28 bg-cover bg-center" style="background-image: url('summer.jpg');">
     <div class="relative z-10 max-w-5xl mx-auto w-full">
-      <h1 class="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-navy drop-shadow-sm leading-none tracking-tight">
+      <h1 class="font-heading text-6xl sm:text-7xl md:text-8xl font-bold text-navy leading-none tracking-tight">
         Andrew<br />Thompson
       </h1>
     </div>
 
     <div class="relative z-10 max-w-5xl mx-auto w-full flex justify-end items-end mt-auto">
       <div class="text-right">
-        <p class="font-heading text-2xl sm:text-3xl md:text-4xl text-cream drop-shadow-lg tracking-wide">
-          Mechanical Engineering at UCSD
+        <p class="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-cream drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] tracking-wide leading-tight">
+          Mechanical Engineering<br />at UCSD
         </p>
       </div>
     </div>
@@ -107,17 +108,19 @@
       <h2 class="font-heading text-4xl md:text-5xl mb-10 tracking-wide">About me</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        <div class="md:col-span-7 space-y-4 text-lg leading-relaxed text-cream/95 font-light">
+        <!-- Text First on Mobile & Desktop -->
+        <div class="order-1 md:col-span-7 space-y-4 text-lg leading-relaxed text-cream/95 font-light">
           <p>
             I am currently an undergraduate Mechanical Engineering student at UC San Diego set to graduate June 2027. At my core I'm a problem-solving engineer who loves to build cool shit and leave an impact beyond myself.
           </p>
           <p>
-            I've gained a special interest seeing everything from so many disciplines come together in "integration hell." Outside of academics, I'm currently writing my own fantasy book and I love everything ocean related!
+            I've garnered a special interest seeing everything from so many disciplines come together in "integration hell." Outside of academics, I'm currently writing my own fantasy book and I love all things ocean and food related!
           </p>
         </div>
 
-        <div class="md:col-span-5 flex justify-center">
-          <div class="border-4 border-cream p-1 bg-cream shadow-2xl max-w-xs w-full hover-lift">
+        <!-- Image Second on Mobile, Right on Desktop -->
+        <div class="order-2 md:col-span-5 flex justify-center">
+          <div class="border-4 border-cream p-1 bg-cream shadow-2xl max-w-xs w-full">
             <img src="profile.jpg" alt="Andrew Thompson" class="w-full h-auto object-cover aspect-square" />
           </div>
         </div>
@@ -125,26 +128,17 @@
     </div>
   </section>
 
-  <!-- Education Section -->
-  <section id="education" class="py-20 px-6 md:px-12 bg-cream text-navy">
+  <!-- Education Section (With Penguin #1 in Bottom Right) -->
+  <section id="education" class="relative py-20 px-6 md:px-12 bg-cream text-navy">
     <div class="max-w-4xl mx-auto">
       <h2 class="font-heading text-4xl md:text-5xl mb-12 text-left md:text-right tracking-wide">Education</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        <!-- Left Photo (Korea) -->
-        <div class="md:col-span-5 flex flex-col items-center">
-          <div class="overflow-hidden rounded-sm shadow-xl border-2 border-navy/10 hover-lift w-full max-w-xs">
-            <img src="korea.jpg" alt="Namsan Tower in Seoul, South Korea" class="w-full h-auto object-cover" />
-          </div>
-          <p class="text-xs italic mt-3 text-navy/80 font-medium">
-            One of my favorite pictures I took in Korea!
-          </p>
-        </div>
-
-        <!-- Right Education Details -->
-        <div class="md:col-span-7 space-y-10">
+        
+        <!-- Education Text: Order 1 on Mobile (First), Order 2 on Desktop (Right) -->
+        <div class="order-1 md:order-2 md:col-span-7 space-y-10">
           <!-- UCSD -->
-          <div class="flex items-start justify-between gap-4 p-4">
+          <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5">
               <h3 class="font-bold text-xl">UC San Diego</h3>
               <p class="italic text-sm text-navy/80 font-semibold">GPA: 3.8/4.0</p>
@@ -153,12 +147,12 @@
               </p>
             </div>
             <div class="shrink-0">
-              <img src="ucsd-logo.png" alt="UCSD Logo" class="w-16 h-16 object-contain" />
+              <img src="ucsd-logo.png" alt="UCSD Logo" class="w-16 h-16 object-contain rounded-lg" />
             </div>
           </div>
 
           <!-- Yonsei University -->
-          <div class="flex items-start justify-between gap-4 p-4">
+          <div class="flex items-start justify-between gap-4">
             <div class="space-y-1.5">
               <h3 class="font-bold text-xl">Yonsei University</h3>
               <p class="italic text-sm text-navy/80 font-semibold">GPA: 4.0/4.0</p>
@@ -171,8 +165,25 @@
             </div>
           </div>
         </div>
+
+        <!-- Korea Photo: Order 2 on Mobile (After Text), Order 1 on Desktop (Left) -->
+        <div class="order-2 md:order-1 md:col-span-5 flex flex-col items-center">
+          <div class="overflow-hidden rounded-sm shadow-xl border-2 border-navy/15 w-full max-w-xs">
+            <img src="korea.jpg" alt="Namsan Tower in Seoul, South Korea" class="w-full h-auto object-cover" />
+          </div>
+          <p class="text-xs italic mt-3 text-navy/80 font-medium">
+            One of my favorite pictures I took in Korea!
+          </p>
+        </div>
+
       </div>
     </div>
+
+    <!-- Plumbing Penguin #1 (Bottom Right of Education) -->
+    <img src="plumbing_penguin.png" 
+         alt="Plumbing Penguin 1" 
+         onclick="findPenguin(1)"
+         class="penguin-btn w-14 md:w-16 h-auto absolute bottom-3 right-4 md:bottom-4 md:right-8 select-none" />
   </section>
 
   <!-- Experience Section -->
@@ -183,49 +194,91 @@
       </div>
 
       <!-- Varda Row -->
-      <a href="varda.html" class="group block py-6 transition-opacity hover:opacity-90">
+      <div class="py-6">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div class="md:col-span-7">
-            <p class="text-lg leading-relaxed text-cream/95 font-light group-hover:text-white transition">
+          <!-- Text First on Mobile -->
+          <div class="order-1 md:col-span-7">
+            <p class="text-lg leading-relaxed text-cream/95 font-light">
               Supporting orbital spacecraft production through hands-on satellite bus integration and testing, propellant tank pressurization procedures, and high-pressure stored-energy modeling.
             </p>
           </div>
-          <div class="md:col-span-5 flex justify-center md:justify-end">
-            <img src="varda-logo.png" alt="Varda Space Industries" class="max-h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
+          <!-- Centered Logo + Centered Learn More Button -->
+          <div class="order-2 md:col-span-5 flex flex-col items-center justify-center space-y-4">
+            <a href="varda.html" class="hover:opacity-90 transition">
+              <img src="varda-logo.png" alt="Varda Space Industries" class="max-h-20 w-auto object-contain mx-auto" />
+            </a>
+            <a href="varda.html" class="px-6 py-1.5 rounded-full border border-cream text-cream text-xs tracking-wider hover:bg-cream hover:text-navy transition">
+              Learn More!
+            </a>
           </div>
         </div>
-      </a>
+      </div>
 
       <hr class="border-cream/30 my-8" />
 
       <!-- SEDS Row -->
-      <a href="seds.html" class="group block py-6 transition-opacity hover:opacity-90">
+      <div class="py-6">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          <div class="md:col-span-4 flex justify-center md:justify-start order-2 md:order-1">
-            <img src="seds-logo.png" alt="SEDS at UC San Diego" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="md:col-span-8 order-1 md:order-2">
-            <p class="text-lg leading-relaxed text-cream/95 font-light group-hover:text-white transition">
+          <!-- Text First on Mobile, Right on Desktop -->
+          <div class="order-1 md:order-2 md:col-span-8">
+            <p class="text-lg leading-relaxed text-cream/95 font-light">
               Through SEDS at UCSD, I've spent hundreds of hours designing, manufacturing, and testing pressure-fed propulsion systems including a 3,000 lbf static fire test stand and a self-landing rocket! I now help run the organization as the Director of Internal Affairs!
             </p>
           </div>
+          <!-- Centered Logo + Centered Learn More Button -->
+          <div class="order-2 md:order-1 md:col-span-4 flex flex-col items-center justify-center space-y-4">
+            <a href="seds.html" class="hover:opacity-90 transition">
+              <img src="seds-logo.png" alt="SEDS at UC San Diego" class="max-h-36 w-auto object-contain mx-auto" />
+            </a>
+            <a href="seds.html" class="px-6 py-1.5 rounded-full border border-cream text-cream text-xs tracking-wider hover:bg-cream hover:text-navy transition">
+              Learn More!
+            </a>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <hr class="border-cream/30 mt-8" />
+      <hr class="border-cream/30 my-8" />
+
+      <!-- Ocean Institute & Non-Engineering Row -->
+      <div class="py-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <!-- Text First on Mobile -->
+          <div class="order-1 md:col-span-8">
+            <p class="text-lg leading-relaxed text-cream/95 font-light">
+              My other time on Earth has been spent volunteering at the Ocean Institute, planning events for UCSD’s Marshall College, and exploring other avenues to express my creativity like architecture and urban design.
+            </p>
+          </div>
+          <!-- Ocean Institute Logo Second on Mobile -->
+          <div class="order-2 md:col-span-4 flex justify-center">
+            <div class="bg-white p-3 rounded-sm shadow-lg max-w-[160px] w-full flex items-center justify-center">
+              <img src="ocean_institute.jpg" alt="Ocean Institute Logo" class="w-full h-auto object-contain" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-cream/30 my-8" />
+
+      <!-- Closing Philosophy Blurb -->
+      <div class="pt-4">
+        <p class="text-lg leading-relaxed text-cream/95 font-light">
+          As invaluable as my engineering experience is, I believe that stepping outside the engineering bubble makes me a much better well-rounded engineer and problem solver. Some problems require different perspectives and draw inspiration from the world and people around them, not just textbooks.
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <!-- Contact / Footer Section -->
-  <footer id="contact" class="py-20 px-6 md:px-12 bg-cream text-navy">
+  <!-- Contact / Footer Section (With Penguin #2 in Bottom Center) -->
+  <footer id="contact" class="relative py-20 px-6 md:px-12 bg-cream text-navy">
     <div class="max-w-4xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
         
-        <!-- Left Column: Info & Pill Buttons -->
-        <div class="md:col-span-7 space-y-6">
+        <!-- Left Column: Info & Pill Buttons (Order 1 on Mobile) -->
+        <div class="order-1 md:col-span-7 space-y-6">
           <div>
-            <h2 class="font-heading text-4xl md:text-5xl tracking-wide">Andrew Thompson</h2>
-            <p class="text-base font-medium text-navy/80 mt-1">U.S. Citizen</p>
+            <h2 class="font-heading text-4xl md:text-5xl tracking-wide">Thank you for Visiting!</h2>
+            <p class="text-base font-medium text-navy/85 mt-2">Andrew Thompson | U.S. Citizen</p>
           </div>
 
           <div class="space-y-4 max-w-md pt-2">
@@ -255,27 +308,31 @@
           </div>
         </div>
 
-        <!-- Right Column: Mountain Photo -->
-        <div class="md:col-span-5 flex justify-center">
-          <div class="overflow-hidden rounded-sm shadow-xl border-4 border-navy/10 max-w-xs w-full hover-lift">
-            <img src="contact_profile.jpg" alt="Andrew Thompson on mountain peak" class="w-full h-auto object-cover" />
+        <!-- Right Column: Mountain Photo (Order 2 on Mobile) -->
+        <div class="order-2 md:col-span-5 flex flex-col items-center">
+          <div class="overflow-hidden rounded-sm shadow-xl border-2 border-navy/20 max-w-xs w-full">
+            <img src="contact_profile.jpg" alt="Andrew Thompson hiking in the Colorado Rockies" class="w-full h-auto object-cover" />
           </div>
+          <p class="text-xs italic mt-2.5 text-navy/80 font-medium">
+            Hiking in the Colorado Rockies
+          </p>
         </div>
 
       </div>
 
-      <div class="mt-16 pt-8 border-t border-navy/10 text-center text-xs text-navy/60">
-        © 2026 Andrew Thompson. Built for GitHub Pages.
+      <!-- Plumbing Penguin #2 (Bottom Center of Footer) -->
+      <div class="mt-10 flex justify-center">
+        <img src="plumbing_penguin.png" 
+             alt="Plumbing Penguin 2" 
+             onclick="findPenguin(2)"
+             class="penguin-btn w-14 md:w-16 h-auto select-none" />
       </div>
     </div>
   </footer>
 
-  <!-- Floating Copy Notification Toast -->
-  <div id="toast" class="fixed bottom-6 right-6 bg-navy border border-cream text-cream px-5 py-3 rounded-xl shadow-2xl transform translate-y-24 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
-    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-    </svg>
-    <span id="toast-msg" class="text-sm font-medium">Copied to clipboard!</span>
+  <!-- Clean Text-Only Notification Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 bg-navy border-2 border-cream text-cream px-5 py-3.5 rounded-xl shadow-2xl transform translate-y-28 opacity-0 transition-all duration-300 z-50">
+    <span id="toast-msg" class="text-sm font-medium">Notification</span>
   </div>
 
   <!-- Scripts -->
@@ -286,16 +343,39 @@
       mobileMenu.classList.toggle('hidden');
     });
 
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = message;
+      toast.classList.remove('translate-y-28', 'opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('translate-y-28', 'opacity-0');
+      }, 3200);
+    }
+
     function copyToClipboard(text, label) {
       navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        const toastMsg = document.getElementById('toast-msg');
-        toastMsg.textContent = `${label} copied: ${text}`;
-        toast.classList.remove('translate-y-24', 'opacity-0');
-        setTimeout(() => {
-          toast.classList.add('translate-y-24', 'opacity-0');
-        }, 3000);
+        showToast(`${label} copied: ${text}`);
       });
+    }
+
+    // 3-Penguin Easter Egg Tracker
+    function findPenguin(id) {
+      let found = JSON.parse(localStorage.getItem('plumbing_penguins') || '[]');
+      if (!found.includes(id)) {
+        found.push(id);
+        localStorage.setItem('plumbing_penguins', JSON.stringify(found));
+      }
+      const count = found.length;
+      if (count >= 3) {
+        showToast('3/3 plumbing penguins found');
+        setTimeout(() => {
+          window.location.href = 'secret.html';
+        }, 900);
+      } else {
+        showToast(`${count}/3 plumbing penguins found`);
+      }
     }
   </script>
 </body>
